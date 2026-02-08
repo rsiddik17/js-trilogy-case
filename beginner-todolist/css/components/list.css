@@ -1,0 +1,31 @@
+.todo-app__list-container {
+    margin: var(--space-8) var(--space-8) 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-app__list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+.todo-app__no-tasks {
+    text-align: center;
+    padding: var(--space-10);
+    margin-bottom: var(--space-8);
+}
+
+.todo-app__no-tasks-icon {
+    margin-bottom: var(--space-4);
+    font-size: var(--space-9);
+    color: var(--gray-200);
+}
+
+.todo-app__no-tasks-text {
+    font-size: var(--text-lg);
+    color: var(--gray-500);
+}
+

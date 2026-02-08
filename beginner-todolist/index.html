@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todolist</title>
+    <link rel="icon" href="todolist.png" type="image/png" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <main class="todo-app">
+      <div class="todo-app__header">
+        <div class="todo-app__heading">
+          <h1 class="todo-app__title">To-Do List</h1>
+          <p class="todo-app__subtitle">Stay organized and productive</p>
+        </div>
+
+        <div class="todo-app__theme-wrapper">
+          <span class="todo-app__mode">Mode</span>
+          <label class="todo-app__theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="todo-app__slider todo-app__round"></div>
+          </label>
+        </div>
+      </div>
+
+      <div class="todo-app__input-section">
+        <input
+          type="text"
+          id="taskInput"
+          class="todo-app__input"
+          placeholder="Add a new task..."
+        />
+        <button id="addBtn" class="todo-app__add-btn">
+          <i class="fas fa-plus"></i> Add Task
+        </button>
+      </div>
+
+      <div class="todo-app__search-section">
+        <i class="fas fa-search todo-app__search-icon"></i>
+        <input
+          type="text"
+          id="searchInput"
+          class="todo-app__search-input"
+          placeholder="Search task..."
+        />
+      </div>
+
+      <div class="todo-app__controls">
+        <div class="todo-app__stats">
+          <div class="todo-app__stat">
+            <span class="todo-app__stat-value" id="totalTasks">0</span>
+            <span class="todo-app__stat-label">Total</span>
+          </div>
+          <div class="todo-app__stat">
+            <span class="todo-app__stat-value" id="completedTasks">0</span>
+            <span class="todo-app__stat-label">Completed</span>
+          </div>
+          <div class="todo-app__stat">
+            <span class="todo-app__stat-value" id="pendingTasks">0</span>
+            <span class="todo-app__stat-label">Pending</span>
+          </div>
+        </div>
+
+        <div class="todo-app__filter-buttons">
+          <button
+            class="todo-app__filter-btn todo-app__filter-btn--active"
+            data-filter="all"
+          >
+            All
+          </button>
+          <button class="todo-app__filter-btn" data-filter="pending">
+            Pending
+          </button>
+          <button class="todo-app__filter-btn" data-filter="completed">
+            Completed
+          </button>
+        </div>
+      </div>
+
+      <div class="todo-app__list-container">
+        <ul class="todo-app__list todo-app__list--row" id="todoList">
+          
+        </ul>
+
+        <div class="todo-app__no-tasks" id="noTasks">
+          <i class="fas fa-clipboard-list todo-app__no-tasks-icon"></i>
+          <p class="todo-app__no-tasks-text">
+            No tasks yet. Add a task to get started!
+          </p>
+        </div>
+      </div>
+
+      <div class="todo-app__clear-section">
+        <button id="clearCompletedBtn" class="todo-app__clear-btn">
+          Clear Completed Tasks
+        </button>
+      </div>
+    </main>
+
+    <script type="module" src="js/index.js"></script>
+  </body>
+</html>
