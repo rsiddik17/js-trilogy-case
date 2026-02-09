@@ -1,63 +1,70 @@
 .todo-app__theme-wrapper {
-    position: relative;
-    top: var(--space-4);
-    left: 25rem;
-    display: flex;
-    gap: var(--space-3);
+  position: relative;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: var(--space-3);
 }
 
 .todo-app__mode {
-    font-size: var(--text-sm);
-    font-weight: var(--font-light);
-    color: var(--gray-500);
+  font-size: var(--text-sm);
+  font-weight: var(--font-light);
+  color: var(--gray-500);
 }
 
 .todo-app__theme-switch {
-    display: inline-block;
-    height: var(--space-6);
-    width: 54px;
-    position: relative;
-    bottom: var(--space-1);
+  display: inline-block;
+  height: var(--space-6);
+  width: 54px;
+  position: relative;
+  bottom: var(--space-1);
 }
 
 .todo-app__theme-switch input {
-    display: none;
+  display: none;
 }
 
 .todo-app__slider {
-    background-color: var(--gray-300);
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    cursor: pointer;
-    transition: .4s;
+  background-color: var(--gray-300);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+  transition: 0.4s;
 }
 
 .todo-app__slider:before {
-    content: "";
-    width: var(--space-5);
-    height: var(--space-5);
-    position: absolute;
-    background-color: var(--white);
-    bottom: 2px;
-    left: 3px;
-    transition: var(--transition-base);
+  content: "";
+  width: var(--space-5);
+  height: var(--space-5);
+  position: absolute;
+  background-color: var(--white);
+  bottom: 2px;
+  left: 3px;
+  transition: var(--transition-base);
 }
 
 input:checked + .todo-app__slider {
-    background-color: var(--blue-600);
+  background-color: var(--blue-600);
 }
 
 input:checked + .todo-app__slider:before {
-    transform: translateX(var(--space-7));
+  transform: translateX(var(--space-7));
 }
 
 .todo-app__slider.todo-app__round {
-    border-radius: var(--radius-3xl);
+  border-radius: var(--radius-3xl);
 }
 
 .todo-app__slider.todo-app__round:before {
-    border-radius: var(--radius-3xl);
+  border-radius: var(--radius-3xl);
+}
+
+@media (min-width: 768px) {
+  .todo-app__theme-wrapper {
+    flex-direction: row;
+  }
 }

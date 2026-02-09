@@ -1,5 +1,5 @@
 .todo-app__clear-section {
-  margin: 0 var(--space-8);
+  margin: 0 var(--space-5);
   display: flex;
   justify-content: flex-end;
 }
@@ -12,8 +12,12 @@
     font-weight: var(--font-semi-bold);
     border: 1px solid var(--gray-300);
     border-radius: var(--radius-md);
+    margin-bottom: var(--space-4);
+    transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base);
 }
 
 .todo-app__clear-btn:hover {
+    background-color: var(--red-50);
+    color: var(--red-500);
     border-color: var(--red-500);
 }

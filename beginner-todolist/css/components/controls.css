@@ -1,54 +1,89 @@
 .todo-app__controls {
-    margin: var(--space-7) var(--space-8) 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  margin: var(--space-7) var(--space-5) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
 }
 
 .todo-app__stats {
-    display: flex;
-    gap: var(--space-5);
-    text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  text-align: center;
 }
 
 .todo-app__stat {
-    background-color: var(--gray-100);
-    display: flex;
-    flex-direction: column;
-    padding: var(--space-4) var(--space-6);
-    border-radius: var(--radius-md);
+  background-color: var(--gray-100);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-4) var(--space-6);
+  border-radius: var(--radius-md);
 }
 
 .todo-app__stat-value {
-    font-size: var(--text-lg);
-    font-weight: var(--font-semi-bold);
-    color: var(--blue-600);
-    margin-bottom: var(--space-1);
+  font-size: var(--text-lg);
+  font-weight: var(--font-semi-bold);
+  color: var(--blue-600);
+  margin-bottom: var(--space-1);
 }
 
 .todo-app__stat-label {
-    font-size: var(--text-sm);
-    font-weight: var(--font-light);
-    color: var(--gray-600);
+  font-size: var(--text-sm);
+  font-weight: var(--font-light);
+  color: var(--gray-600);
 }
 
 .todo-app__filter-buttons {
-    display: flex;
-    gap: var(--space-4);
+  width: 100%;
+  display: flex;
+  gap: var(--space-4);
 }
 
 .todo-app__filter-btn {
-    background-color: var(--gray-100);
-    display: flex;
-    flex-direction: column;
-    font-size: var(--text-sm);
-    font-weight: var(--font-medium);
-    padding: var(--space-3) var(--space-4);
-    border-radius: var(--radius-md);
+  width: 100%;
+  background-color: var(--gray-100);
+  display: flex;
+  flex-direction: column;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-base);
+}
+
+.todo-app__filter-btn:hover {
+  background-color: var(--gray-200);
 }
 
 .todo-app__filter-btn--active {
-    background-color: var(--blue-600);
-    color: var(--white);
-    font-weight: var(--font-semi-bold);
+  background-color: var(--blue-600);
+  color: var(--white);
+  font-weight: var(--font-semi-bold);
+  transition: background-color var(--transition-base);
+}
+
+.todo-app__filter-btn--active:hover {
+  background-color: var(--gray-100);
+  border: 1px solid var(--blue-600);
+}
+
+@media screen and (min-width: 768px) {
+  .todo-app__controls {
+    margin: var(--space-7) var(--space-8) 0;
+    flex-direction: row;
+  }
+
+  .todo-app__stats {
+    flex-direction: row;
+  }
+
+  .todo-app__filter-buttons {
+    justify-content: flex-end;
+  }
+
+  .todo-app__filter-btn {
+    width: auto;
+  }
 }

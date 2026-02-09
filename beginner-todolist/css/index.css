@@ -28,8 +28,13 @@
   --green-500: oklch(65% 0.18 150);
   --green-600: oklch(55% 0.18 150);
 
-  --red-500: oklch(63% 0.22 29);
-  --red-600: oklch(55% 0.22 29);
+  --red-50: oklch(97% 0.04 350);
+  --red-100: oklch(93% 0.08 350);
+  --red-200: oklch(87% 0.14 350);
+  --red-300: oklch(78% 0.2 350);
+  --red-400: oklch(68% 0.26 350);
+  --red-500: oklch(60% 0.3 350);
+  --red-600: oklch(52% 0.3 350);
 
   /* Font */
   --font-inter: "Inter", sans-serif;
@@ -75,8 +80,8 @@
   --shadow-lg: 0 0 0 4px rgba(0, 0, 0, 0.2), 0 0 0 6px rgba(0, 0, 0, 0.2);
 
   /* Transition */
-  --transition-base: 300ms ease-in-out;
-  --transition-slow: 500ms ease-in-out;
+  --transition-base: 200ms ease;
+  --transition-slow: 500ms ease;
 }
 
 * {
@@ -101,27 +106,37 @@ button {
 }
 
 .todo-app {
-  max-width: 100%;
+  width: 100%;
   min-height: 100vh;
 }
 
 .todo-app__header {
-  width: 100%;
-  margin-top: var(--space-8);
+  margin: var(--space-6) var(--space-5) 0;
   display: flex;
-  justify-content: center;
+  align-items: center;
 }
 
 .todo-app__heading {
-  text-align: center;
+  width: 100%;
+  text-align: left;
 }
 
 .todo-app__title {
-  font-size: var(--text-4xl);
+  font-size: var(--text-3xl);
   color: var(--blue-500);
   margin-bottom: var(--space-2);
 }
 
 .todo-app__subtitle {
   color: var(--gray-500);
+}
+
+@media screen and (min-width: 768px) {
+  .todo-app__header {
+    margin: var(--space-6) var(--space-8) 0;
+  }
+
+  .todo-app__heading {
+    text-align: center;
+  }
 }
