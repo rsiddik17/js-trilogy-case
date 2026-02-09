@@ -10,7 +10,7 @@
   top: 50%;
   left: var(--space-4);
   font-size: var(--text-xl);
-  color: var(--gray-300);
+  color: var(--color-gray-300);
   transform: translateY(-50%);
 }
 
@@ -19,7 +19,7 @@
   padding: var(--space-4) var(--space-4) var(--space-4) var(--space-11);
   font-size: var(--text-base);
   border-radius: var(--radius-md);
-  border: 2px solid var(--gray-300);
+  border: 2px solid var(--color-gray-300);
   transition:
     border-color var(--transition-base),
     box-shadow var(--transition-base);
@@ -27,8 +27,8 @@
 
 .todo-app__search-input:focus {
   outline: none;
-  border-color: var(--blue-500);
-  box-shadow: 0 0 0 3px var(--blue-100);
+  border-color: var(--color-blue-500);
+  box-shadow: 0 0 0 3px var(--color-blue-100);
 }
 
 @media screen and (min-width: 768px) {

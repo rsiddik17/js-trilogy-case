@@ -21,11 +21,11 @@
 .todo-app__no-tasks-icon {
     margin-bottom: var(--space-4);
     font-size: var(--space-9);
-    color: var(--gray-200);
+    color: var(--color-gray-200);
 }
 
 .todo-app__no-tasks-text {
     font-size: var(--text-lg);
-    color: var(--gray-500);
+    color: var(--color-gray-500);
 }
 

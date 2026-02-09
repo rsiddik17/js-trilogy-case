@@ -10,7 +10,7 @@
   padding: var(--space-4);
   font-size: var(--text-base);
   border-radius: var(--radius-md);
-  border: 2px solid var(--gray-300);
+  border: 2px solid var(--color-gray-300);
   transition:
     border-color var(--transition-base),
     box-shadow var(--transition-base);
@@ -18,27 +18,28 @@
 
 .todo-app__input:focus {
   outline: none;
-  border-color: var(--blue-500);
-  box-shadow: 0 0 0 3px var(--blue-100);
+  border-color: var(--color-blue-500);
+  box-shadow: 0 0 0 3px var(--color-blue-100);
 }
 
 .todo-app__add-btn {
-  background-color: var(--blue-500);
+  background-color: var(--color-blue-500);
   display: flex;
   justify-content: center;
   align-items: center;
   gap: var(--space-2);
-  color: var(--white);
+  color: var(--color-white);
   padding: var(--space-4);
   font-size: var(--text-base);
   font-weight: var(--font-medium);
   border-radius: var(--radius-md);
+  box-shadow: var(--shadow-btn-blue);
   transition: background-color var(--transition-base);
   cursor: pointer;
 }
 
 .todo-app__add-btn:hover {
-  background-color: var(--blue-600);
+  background-color: var(--color-blue-600);
 }
 
 @media screen and (min-width: 768px) {

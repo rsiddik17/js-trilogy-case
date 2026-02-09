@@ -6,18 +6,19 @@
 
 .todo-app__clear-btn {
     background: transparent;
-    color: var(--gray-500);
+    color: var(--color-gray-500);
     padding: var(--space-4) var(--space-5);
     font-size: var(--text-sm);
     font-weight: var(--font-semi-bold);
-    border: 1px solid var(--gray-300);
+    border: 1px solid var(--text-tertiary);
+    box-shadow: var(--shadow-btn-red);
     border-radius: var(--radius-md);
     margin-bottom: var(--space-4);
     transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base);
 }
 
 .todo-app__clear-btn:hover {
-    background-color: var(--red-50);
-    color: var(--red-500);
-    border-color: var(--red-500);
+    background-color: var(--color-red-50);
+    color: var(--color-red-500);
+    border-color: var(--color-red-500);
 }

@@ -15,24 +15,25 @@
 }
 
 .todo-app__stat {
-  background-color: var(--gray-100);
+  background-color: var(--color-gray-100);
   display: flex;
   flex-direction: column;
   padding: var(--space-4) var(--space-6);
   border-radius: var(--radius-md);
+   box-shadow: var(--shadow-btn-blue);
 }
 
 .todo-app__stat-value {
   font-size: var(--text-lg);
   font-weight: var(--font-semi-bold);
-  color: var(--blue-600);
+  color: var(--color-blue-600);
   margin-bottom: var(--space-1);
 }
 
 .todo-app__stat-label {
   font-size: var(--text-sm);
   font-weight: var(--font-light);
-  color: var(--gray-600);
+  color: var(--color-gray-600);
 }
 
 .todo-app__filter-buttons {
@@ -43,30 +44,32 @@
 
 .todo-app__filter-btn {
   width: 100%;
-  background-color: var(--gray-100);
+  background-color: var(--color-gray-100);
   display: flex;
   flex-direction: column;
   font-size: var(--text-sm);
   font-weight: var(--font-medium);
   padding: var(--space-3) var(--space-4);
+  box-shadow: var(--shadow-btn-blue);
   border-radius: var(--radius-md);
+  cursor: pointer;
   transition: background-color var(--transition-base);
 }
 
 .todo-app__filter-btn:hover {
-  background-color: var(--gray-200);
+  background-color: var(--color-gray-200);
 }
 
 .todo-app__filter-btn--active {
-  background-color: var(--blue-600);
-  color: var(--white);
+  background-color: var(--color-blue-600);
+  color: var(--color-white);
   font-weight: var(--font-semi-bold);
   transition: background-color var(--transition-base);
 }
 
 .todo-app__filter-btn--active:hover {
-  background-color: var(--gray-100);
-  border: 1px solid var(--blue-600);
+  background-color: var(--color-gray-100);
+  border: 1px solid var(--color-blue-600);
 }
 
 @media screen and (min-width: 768px) {
