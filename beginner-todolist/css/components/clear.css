@@ -2,6 +2,7 @@
   margin: 0 var(--space-5);
   display: flex;
   justify-content: flex-end;
+  margin-bottom: var(--space-4);
 }
 
 .todo-app__clear-btn {
@@ -13,7 +14,7 @@
     border: 1px solid var(--text-tertiary);
     box-shadow: var(--shadow-btn-red);
     border-radius: var(--radius-md);
-    margin-bottom: var(--space-4);
+    cursor: pointer;
     transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base);
 }
 
@@ -21,4 +22,10 @@
     background-color: var(--color-red-50);
     color: var(--color-red-500);
     border-color: var(--color-red-500);
+}
+
+@media screen and (min-width: 768px) {
+  .todo-app__clear-section {
+    margin: 0 var(--space-8);
+  }
 }

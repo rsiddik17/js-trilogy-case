@@ -83,9 +83,7 @@
       </div>
 
       <div class="todo-app__list-container">
-        <ul class="todo-app__list todo-app__list--row" id="todoList">
-          
-        </ul>
+        <ul class="todo-app__list todo-app__list--row" id="todoList"></ul>
 
         <div class="todo-app__no-tasks" id="noTasks">
           <i class="fas fa-clipboard-list todo-app__no-tasks-icon"></i>
@@ -101,6 +99,31 @@
         </button>
       </div>
     </main>
+
+    <div class="todo-app__modal-overlay" id="confirmModal">
+      <div class="todo-app__modal">
+        <div class="todo-app__modal-header">
+          <h3 class="todo-app__modal-title">Confirm Action</h3>
+        </div>
+        <div class="todo-app__modal-body">
+          <p id="modalMessage">Are you sure you want to do this?</p>
+        </div>
+        <div class="todo-app__modal-footer">
+          <button
+            class="todo-app__modal-btn todo-app__modal-btn--cancel"
+            id="cancelModalBtn"
+          >
+            Cancel
+          </button>
+          <button
+            class="todo-app__modal-btn todo-app__modal-btn--confirm"
+            id="confirmModalBtn"
+          >
+            Yes, Delete
+          </button>
+        </div>
+      </div>
+    </div>
 
     <script type="module" src="js/index.js"></script>
   </body>

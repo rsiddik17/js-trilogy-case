@@ -52,6 +52,7 @@
   padding: var(--space-3) var(--space-4);
   box-shadow: var(--shadow-btn-blue);
   border-radius: var(--radius-md);
+  border: 1px solid transparent;
   cursor: pointer;
   transition: background-color var(--transition-base);
 }

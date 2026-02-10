@@ -1,31 +1,110 @@
 .todo-app__list-container {
-    margin: var(--space-8) var(--space-8) 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin: var(--space-10) var(--space-8) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .todo-app__list {
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-4);
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.todo-app__list-item {
+  flex: 1;
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--space-5);
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-base);
+  border-left: 4px solid var(--color-blue-500);
+  position: relative;
+  cursor: pointer;
+}
+
+.todo-app__list-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.todo-app__list-item--completed {
+  border-left-color: var(--color-green-500);
+}
+
+.todo-app__list-item--completed .todo-app__task-text {
+  opacity: 0.5;
+  text-decoration: line-through;
+  color: var(--color-gray-400);
+}
+
+.todo-app__checkbox {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  accent-color: var(--primary);
+  align-self: flex-start;
+}
+
+.todo-app__task-text {
+  flex: 1;
+  font-size: 1.1rem;
+  word-break: break-word;
+  margin: 10px 0;
+  line-height: 1.4;
+}
+
+.todo-app__delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  color: var(--color-red-600);
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-base);
+}
+
+.todo-app__delete-btn:hover {
+  background-color: var(--color-red-100);
 }
 
 .todo-app__no-tasks {
-    text-align: center;
-    padding: var(--space-10);
-    margin-bottom: var(--space-8);
+  text-align: center;
+  padding: var(--space-10);
+  margin-bottom: var(--space-8);
 }
 
 .todo-app__no-tasks-icon {
-    margin-bottom: var(--space-4);
-    font-size: var(--space-9);
-    color: var(--color-gray-200);
+  margin-bottom: var(--space-4);
+  font-size: var(--space-9);
+  color: var(--color-gray-200);
 }
 
 .todo-app__no-tasks-text {
-    font-size: var(--text-lg);
-    color: var(--color-gray-500);
+  font-size: var(--text-lg);
+  color: var(--color-gray-500);
 }
 
+@media screen and (min-width: 768px) {
+  .todo-app__list-item {
+    min-width: 250px;
+    max-width: calc(33.333% - 10px);
+    flex-direction: row;
+  }
+}
