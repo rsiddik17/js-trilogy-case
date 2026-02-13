@@ -1,35 +1,36 @@
-const modalOverlay = document.getElementById("confirmModal");
+const confirmModal = document.getElementById("confirmModal");
 const modalMessage = document.getElementById("modalMessage");
-const cancelBtn = document.getElementById("cancelModalBtn");
-const confirmBtn = document.getElementById("confirmModalBtn");
+const cancelModalBtn = document.getElementById("cancelModalBtn");
+const confirmModalBtn = document.getElementById("confirmModalBtn");
 
 let onConfirmCallback = null;
 
+const closeModal = () => {
+    confirmModal.classList.remove("todo-app__modal-overlay--active");
+    onConfirmCallback = null;
+}
+
 export const initModal = () => {
-  cancelBtn.addEventListener("click", closeModal);
+    cancelModalBtn.addEventListener("click", closeModal);
 
-  modalOverlay.addEventListener("click", (e) => {
-    if (e.target === modalOverlay) {
-      closeModal();
-    }
-  });
+    confirmModal.addEventListener("click", (e) => {
+        if(e.target === confirmModal) {
+            closeModal();
+        }
+    })
 
-  confirmBtn.addEventListener("click", () => {
-    if (onConfirmCallback) {
-      onConfirmCallback();
-    }
-    closeModal();
-  });
-};
+    confirmModalBtn.addEventListener("click", () => {
+        if(onConfirmCallback) {
+            onConfirmCallback();
+        }
+        closeModal();
+    })
+}
 
 export const showConfirmModal = (message, actionCallback) => {
-  modalMessage.textContent = message;
-  onConfirmCallback = actionCallback;
+    modalMessage.textContent = message;
 
-  modalOverlay.classList.add("todo-app__modal-overlay--active");
-};
+    onConfirmCallback = actionCallback;
 
-const closeModal = () => {
-  modalOverlay.classList.remove("todo-app__modal-overlay--active");
-  onConfirmCallback = null;
-};
+    confirmModal.classList.add("todo-app__modal-overlay--active");
+}

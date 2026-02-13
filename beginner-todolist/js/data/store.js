@@ -1,35 +1,22 @@
-const STORAGE_KEY = 'todo-apps-data';
+import { loadFromStorage, saveToStorage, triggerEvent } from "./storage.js";
 
-let tasks = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-let currentFilter = 'all';
-let currentSearch = '';
-
-const triggerEvent = () => {
-    document.dispatchEvent(new Event("dataChanged"));
-}
-
-const saveToStorage = () => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
-    triggerEvent();
-}
-
-
-
-export const getTasks = () => tasks;
+let tasks = loadFromStorage();
+let currentFilter = "all";
+let currentSearch = "";
 
 export const addTaskToStore = (task) => {
     tasks.unshift(task);
-    saveToStorage();
+    saveToStorage(tasks);
+}
+
+export const toggleTaskInStore = (id) => {
+    tasks = tasks.map(task => task.id === id ? {...task, completed: !task.completed} : task);
+    saveToStorage(tasks);
 }
 
 export const deleteTaskFromStore = (id) => {
     tasks = tasks.filter(task => task.id !== id);
-    saveToStorage();
-}
-
-export const toggleTaskInStore = (id) => {
-    tasks = tasks.map(task => task.id === id ? {...task, completed: !task.completed } : task );
-    saveToStorage();
+    saveToStorage(tasks);
 }
 
 export const getStats = () => {
@@ -37,33 +24,30 @@ export const getStats = () => {
         total: tasks.length,
         completed: tasks.filter(task => task.completed).length,
         pending: tasks.filter(task => !task.completed).length
-    };
-};
+    }
+}
+
+export const getFilterTasks = () => {
+    return tasks.filter(task => {
+        const matchSearch = task.text.toLowerCase().includes(currentSearch.toLocaleLowerCase());
+
+        const matchFilter = (currentFilter === "all") || (currentFilter === "completed" && task.completed) ||  (currentFilter === "pending" && !task.completed);
+
+        return matchSearch && matchFilter;
+    })
+}
 
 export const setSearchQuery = (query) => {
     currentSearch = query;
     triggerEvent();
-};
+}
 
-export const setFilterStatus = (status) => {
-    currentFilter = status;
+export const setFilterStatus = (query) => {
+    currentFilter = (query);
     triggerEvent();
-};
-
-export const getFilteredTasks = () => {
-    return tasks.filter(task => {
-        const matchSearch = task.text.toLowerCase().includes(currentSearch.toLowerCase());
-        
-        const matchFilter = 
-            (currentFilter === 'all') ||
-            (currentFilter === 'completed' && task.completed) ||
-            (currentFilter === 'pending' && !task.completed);
-
-        return matchSearch && matchFilter;
-    });
-};
+}
 
 export const clearCompletedFromStore = () => {
     tasks = tasks.filter(task => !task.completed);
-    saveToStorage();
-};
+    saveToStorage(tasks);
+}

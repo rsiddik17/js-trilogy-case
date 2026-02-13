@@ -1,9 +1,11 @@
-import { setSearchQuery } from "../data/store.js";
+import { setSearchQuery } from "../data/store.js"
 
-export const initSearchTask = () => {
-  const searchInput = document.getElementById("searchInput");
+const initSearchTask = () => {
+    const searchInput = document.getElementById("searchInput");
 
-  searchInput.addEventListener("input", (e) => {
-    setSearchQuery(e.target.value);
-  });
-};
+    searchInput.addEventListener("input", (e) => {
+        setSearchQuery(e.target.value);
+    })
+}
+
+export default initSearchTask;
